@@ -24,12 +24,6 @@ To compute the surface area numerically:
 
 ```python area = np.sum(cross) * du * dv ```
 
-This approach is based on the formula:
-
-$$
-A \approx \sum \left\| \frac{\partial \vec{r}}{\partial u} \times \frac{\partial \vec{r}}{\partial v} \right\| \, du \, dv
-$$
-
 This is a standard method in surface integral approximations.
 
 
