@@ -22,9 +22,8 @@ class MobiusStrip:
         z = v * np.sin(u / 2)
         return x, y, z
 
-    def surface_area(self):
-        # Approximate the surface area using the cross product of partial derivatives
-        du = 2 * np.pi / (self.n - 1)
+    def surface_area(self): # Approximate the surface area using the cross product of partial derivatives
+        du = 2 * np.pi / (self.n - 1) 
         dv = self.w / (self.n - 1)
 
         xu, xv = np.gradient(self.x, du, dv, edge_order=2)
@@ -32,7 +31,7 @@ class MobiusStrip:
         zu, zv = np.gradient(self.z, du, dv, edge_order=2)
 
         # Cross product of tangent vectors
-        cross = np.sqrt(
+        cross = np.sqrt(         
             (yu * zv - zu * yv)**2 +
             (zu * xv - xu * zv)**2 +
             (xu * yv - yu * xv)**2
